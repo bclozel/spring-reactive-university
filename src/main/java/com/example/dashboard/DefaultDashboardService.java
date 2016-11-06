@@ -54,11 +54,13 @@ public class DefaultDashboardService implements DashboardService {
 
 	@Override
 	public Flux<GitterMessage> getLatestChatMessages(int limit) {
-		return Flux.empty();
+		return this.gitterClient
+				.latestChatMessages(this.properties.getReactor().getGitterRoomId(), limit);
 	}
 
 	@Override
 	public Flux<GitterMessage> streamChatMessages() {
-		return Flux.empty();
+		String roomId = this.properties.getReactor().getGitterRoomId();
+		return this.gitterClient.streamChatMessages(roomId);
 	}
 }
