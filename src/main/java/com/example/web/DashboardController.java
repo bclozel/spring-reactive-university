@@ -5,6 +5,7 @@ import com.example.dashboard.ReactorPersonRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author Brian Clozel
@@ -20,6 +21,11 @@ public class DashboardController {
 	public DashboardController(DashboardService dashboardService, ReactorPersonRepository repository) {
 		this.dashboardService = dashboardService;
 		this.repository = repository;
+	}
+
+	@GetMapping("/")
+	public String home() {
+		return "home";
 	}
 
 }
