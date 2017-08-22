@@ -1,6 +1,6 @@
 package com.example;
 
-import org.springframework.boot.context.embedded.ReactiveWebApplicationContext;
+import org.springframework.boot.web.reactive.context.ReactiveWebApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.config.ViewResolverRegistry;
